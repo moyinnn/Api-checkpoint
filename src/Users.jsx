@@ -1,0 +1,26 @@
+    import React, { useState, useEffect } from 'react';
+    import axios from 'axios';
+
+    function UserList() {
+    const [UsersList, setUsersList] = useState([]);
+
+    useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+            setUsersList(response.data);
+        })
+        .catch(error => {
+        console.error(error);
+        });
+    }, []);
+
+    return (
+    <div>
+        <h1>List of Users:</h1>
+        {UsersList.map(user => (
+            <li key={user.id}>{user.name}</li>
+        ))}
+    </div>
+    );
+    }
+    export default UserList;

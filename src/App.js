@@ -1,12 +1,11 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
-// import FetchGet from './API/fetchGet';
-import FetchPost from './API/FetchPost';
+import UserList from './userlist';
 
 function App() {
   return (
     <div className="App">
-      <FetchPost/>
+      <UserList/>
     </div>
   );
 }
